@@ -7,13 +7,7 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const bg = Color(0xFFF0F0F0); // серый фон экрана
-    const mint = Color(0xFFC2E6D9); // мятный фон карточки-экрана
-    const title = Color(0xFF111827); // тёмный текст
-    const subtitle = Color(0xFF6B7280); // вторичный текст
-    const chipBg = Color(0xFFE6F2EC); // фон чипов Paystack
-    const appliedBg = Color(0xFF12A05A); // Applied
-    const expiresBg = Color(0xFFF4A61F); // Expires soon
+    const mint = Color(0xFFC2E6D9);
 
     return Scaffold(
       backgroundColor: mint,
@@ -28,7 +22,6 @@ class MainPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // ---------- Header ----------
                 Row(
                   children: [
                     const _Avatar(),
@@ -40,11 +33,8 @@ class MainPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
-
-                // ---------- SECTION: DESIGNER ----------
                 const _SectionLabel(text: 'DESIGNER'),
                 const SizedBox(height: 12),
-
                 JobCard(
                   companyLogo: const _LogoBadge(),
                   titleText: 'Junior UX Designer',
@@ -53,7 +43,6 @@ class MainPage extends StatelessWidget {
                   rightText: '\$40–60k/yearly',
                 ),
                 const SizedBox(height: 14),
-
                 JobCard(
                   companyLogo: const _LogoBadge(),
                   titleText: 'Junior Product Designer',
@@ -63,7 +52,6 @@ class MainPage extends StatelessWidget {
                   statusChip: _StatusChip.applied(),
                 ),
                 const SizedBox(height: 14),
-
                 JobCard(
                   companyLogo: const _LogoBadge(),
                   titleText: 'Middle motion Designer',
@@ -72,13 +60,9 @@ class MainPage extends StatelessWidget {
                   rightText: '\$40–60k/yearly',
                   statusChip: _StatusChip.expiresSoon(),
                 ),
-
                 const SizedBox(height: 22),
-
-                // ---------- SECTION: ANDROID ----------
                 const _SectionLabel(text: 'ANDROID'),
                 const SizedBox(height: 12),
-
                 JobCard(
                   companyLogo: const _LogoBadge(),
                   titleText: 'Junior Android developer',
@@ -87,7 +71,6 @@ class MainPage extends StatelessWidget {
                   rightText: '\$40–60k/yearly',
                 ),
                 const SizedBox(height: 14),
-
                 JobCard(
                   companyLogo: const _LogoBadge(),
                   titleText: 'Middle Android developer',
@@ -96,7 +79,6 @@ class MainPage extends StatelessWidget {
                   rightText: '\$40–60k/yearly',
                   statusChip: _StatusChip.expiresSoon(),
                 ),
-
                 const SizedBox(height: 8),
               ],
             ),
@@ -106,8 +88,6 @@ class MainPage extends StatelessWidget {
     );
   }
 }
-
-// ===================== Small building blocks =====================
 
 class _Avatar extends StatelessWidget {
   const _Avatar();
@@ -121,7 +101,7 @@ class _Avatar extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         image: const DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/sample/avatar.jpg'), // при желании замени
+          image: AssetImage('assets/sample/avatar.jpg'),
         ),
       ),
     );
@@ -176,7 +156,6 @@ class _LogoBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // круглая "C" с градиентом — как в макете
     return Container(
       width: 44,
       height: 44,
@@ -265,8 +244,6 @@ class _StatusChip extends StatelessWidget {
     );
   }
 }
-
-// ===================== Job card =====================
 
 class JobCard extends StatelessWidget {
   final Widget companyLogo;
